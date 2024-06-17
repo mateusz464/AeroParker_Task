@@ -21,6 +21,7 @@ public class RegistrationController {
             @RequestParam(value = "address2", required = false) String address2,
             @RequestParam(value = "city", required = false) String city,
             @RequestParam("postcode") String postcode,
+            @RequestParam(value = "countryCode", required = false) String countryCode,
             @RequestParam(value = "phone", required = false) String phone
     ) {
         // Handle the form submission
@@ -32,6 +33,7 @@ public class RegistrationController {
         System.out.println("Address Line 2: " + address2);
         System.out.println("City: " + city);
         System.out.println("Postcode: " + postcode);
+        System.out.println("Country Code: " + countryCode);
         System.out.println("Phone Number: " + phone);
         return "registration";
     }
