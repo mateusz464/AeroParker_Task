@@ -61,6 +61,7 @@
             </div>
             <div>
                 <input type="tel" class="form-control" id="phone" name="phone" maxlength="20">
+                <input type="hidden" id="countryCode" name="countryCode">
             </div>
         </div>
         <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Register</button>
@@ -93,8 +94,12 @@
     const urlParams = new URLSearchParams(window.location.search);
     const errorField = urlParams.get('error');
 
+    // Display an alert message if there is an error in the form
     if (errorField) {
-        alert('Error in the ' + errorField + ' field, please try again');
+        const errorMessage = errorField === "emailExists"
+            ? 'The email address is already registered, please try again'
+            : 'Error in the ' + errorField + ' field, please try again';
+        alert(errorMessage);
     }
 </script>
 </body>
