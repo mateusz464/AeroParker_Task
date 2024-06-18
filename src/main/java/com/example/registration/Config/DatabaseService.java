@@ -5,12 +5,12 @@ import java.sql.*;
 /**
  * Singleton class to establish a connection to the database
  */
-public class DatabaseConnection {
-    private static DatabaseConnection instance;
+public class DatabaseService {
+    private static DatabaseService instance;
     private Connection connection;
 
     // Private constructor to prevent instantiation
-    private DatabaseConnection() {
+    private DatabaseService() {
         // Load the database properties from the configuration file
         String url = Config.getProperty("db.url");
         String user = Config.getProperty("db.user");
@@ -29,9 +29,9 @@ public class DatabaseConnection {
     }
 
     // Static method to get the instance of the class
-    public static DatabaseConnection getInstance() {
+    public static DatabaseService getInstance() {
         if (instance == null) {
-            instance = new DatabaseConnection();
+            instance = new DatabaseService();
         }
         return instance;
     }

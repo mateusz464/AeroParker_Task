@@ -1,6 +1,6 @@
 package com.example.registration.Controllers;
 
-import com.example.registration.Config.DatabaseConnection;
+import com.example.registration.Config.DatabaseService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 @Controller
 public class RegistrationController {
     // Get the connection instance
-    DatabaseConnection connection = DatabaseConnection.getInstance();
+    DatabaseService connection = DatabaseService.getInstance();
 
     @GetMapping("/registration")
     public String getRegistrationPage() {
@@ -65,6 +65,6 @@ public class RegistrationController {
         // Insert data into the database
         connection.insertCustomer(email, title, firstName, lastName, address1, address2, city, postcode, phoneNum);
 
-        return "registration";
+        return "success";
     }
 }
