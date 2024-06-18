@@ -24,7 +24,6 @@ public class RegistrationController {
             @RequestParam(value = "countryCode", required = false) String countryCode,
             @RequestParam(value = "phone", required = false) String phone
     ) {
-        // Handle the form submission
         System.out.println("Title: " + title);
         System.out.println("First Name: " + firstName);
         System.out.println("Last Name: " + lastName);
@@ -33,8 +32,7 @@ public class RegistrationController {
         System.out.println("Address Line 2: " + address2);
         System.out.println("City: " + city);
         System.out.println("Postcode: " + postcode);
-        System.out.println("Country Code: " + countryCode);
-        System.out.println("Phone Number: " + phone);
+        System.out.println("Phone Number: +" + countryCode + phone);
         return "registration";
     }
 }

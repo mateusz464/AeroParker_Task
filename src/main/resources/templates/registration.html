@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="mt-5">Register here</h1>
+    <h1 class="mt-5">Registration Form</h1>
     <form action="/submitRegistration" method="post">
         <div class="form-group">
             <label for="title">Title<span class="required-field">*</span>:</label>
@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
             <label for="email">Email<span class="required-field">*</span>:</label>
-            <input type="email" class="form-control" id="email" name="email" required maxlength="255">
+            <input type="email" class="form-control" id="email" name="email" required maxlength="255" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
         </div>
         <div class="form-group">
             <label for="address1">Address Line 1<span class="required-field">*</span>:</label>
@@ -56,11 +56,14 @@
             <input type="text" class="form-control" id="postcode" name="postcode" required maxlength="10">
         </div>
         <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" class="form-control" id="phone" name="phone" maxlength="20">
+            <div>
+                <label for="phone">Phone Number:</label>
+            </div>
+            <div>
+                <input type="tel" class="form-control" id="phone" name="phone" maxlength="20">
+            </div>
         </div>
-        <input type="hidden" id="countryCode" name="countryCode">
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Register</button>
     </form>
 </div>
 
