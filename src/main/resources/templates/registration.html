@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
@@ -87,6 +87,15 @@
         const selectedCountryData = phoneInputInstance.getSelectedCountryData();
         document.querySelector("#countryCode").value = selectedCountryData.dialCode;
     });
+</script>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorField = urlParams.get('error');
+
+    if (errorField) {
+        alert('Error in the ' + errorField + ' field, please try again');
+    }
 </script>
 </body>
 </html>
