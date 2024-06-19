@@ -36,11 +36,6 @@ public class DatabaseService {
         return instance;
     }
 
-    // Getter method to return the connection
-    public Connection getConnection() {
-        return connection;
-    }
-
     // Method to check if an email already exists in the database
     public boolean emailExists(String email) {
         String query = "SELECT email_address FROM customers WHERE email_address = ?";
